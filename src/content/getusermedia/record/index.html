@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <base target="_blank">
+
+    <title>MediaStream Recording</title>
+
+    <link href="../../../images/tbz.jpeg" rel="icon" sizes="192x192">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link href="../../../css/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="container">
+
+    <h1>
+        <span>MediaRecorder</span></h1>
+
+    <video autoplay id="gum" muted playsinline></video>
+    <video id="recorded" loop playsinline></video>
+
+    <div>
+        <button id="start">Start camera</button>
+        <button disabled id="record">Start Recording</button>
+        <button disabled id="play">Play</button>
+        <button disabled id="download">Download</button>
+    </div>
+
+    <div>
+        Recording format: <select disabled id="codecPreferences"></select>
+    </div>
+    <div>
+        <span id="errorMsg"></span>
+    </div>
+
+</div>
+
+<!-- include adapter for srcObject shim -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script async src="js/main.js"></script>
+<script src="../../../js/lib/ga.js"></script>
+
+</body>
+</html>

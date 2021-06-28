@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <base target="_blank">
+
+    <title>Transmit text</title>
+
+    <link href="../../../images/tbz.jpeg" rel="icon" sizes="192x192">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link href="../../../css/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<div id="container">
+
+    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
+        <span>Transmit text</span></h1>
+
+    <div id="buttons">
+        <button id="startButton">Start</button>
+        <button disabled id="sendButton">Send</button>
+        <button disabled id="closeButton">Stop</button>
+    </div>
+
+    <div id="sendReceive">
+        <div id="send">
+            <h2>Send</h2>
+            <textarea disabled id="dataChannelSend"
+                      placeholder="Press Start, enter some text, then press Send."></textarea>
+        </div>
+        <div id="receive">
+            <h2>Receive</h2>
+            <textarea disabled id="dataChannelReceive"></textarea>
+        </div>
+    </div>
+
+    <p>View the console to see logging.</p>
+
+    <p>The <code>RTCPeerConnection</code> objects <code>localConnection</code> and <code>remoteConnection</code> are in
+        global scope, so you can inspect them in the console as well.</p>
+
+    <p>For more information about RTCDataChannel, see <a
+            href="http://www.html5rocks.com/en/tutorials/webrtc/basics/#toc-rtcdatachannel"
+            title="RTCDataChannel section of HTML5 Rocks article about WebRTC">Getting Started With WebRTC</a>.</p>
+</div>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script async src="js/main.js"></script>
+
+<script src="../../../js/lib/ga.js"></script>
+
+</body>
+</html>

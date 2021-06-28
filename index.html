@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <base target="_blank">
+
+    <title>WebRTC Examples</title>
+
+    <link href="src/images/tbz.jpeg" rel="icon" sizes="192x192">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link href="src/css/main.css" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+</head>
+
+<body>
+<div id="container">
+
+    <h1>WebRTC Examples - Module 152</h1>
+
+    <section>
+        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia">
+            <pre><code>getUserMedia()</code></pre>
+        </a>
+        </h2>
+        <ul>
+            <li><a href="src/content/getusermedia/filter/">Implement Video only getUserMedia() with canvas and CSS
+                overlay
+                filter</a></li>
+
+            <li><a href="src/content/getusermedia/volume/">Audio-only getUserMedia() reflecting volume levels</a></li>
+
+            <li><a href="src/content/getusermedia/record/">Record and playback Video Stream</a></li>
+        </ul>
+        <h2 id="devices">Devices:</h2>
+        <ul>
+            <li><a href="src/content/devices/input-output/">Choose camera, microphone and speaker</a></li>
+        </ul>
+
+        <h2 id="capture">Stream capture:</h2>
+        <ul>
+
+            <li><a href="src/content/capture/video-video/">Stream from a video element to a video element</a></li>
+
+            <li><a href="src/content/capture/canvas-video/">Stream from a canvas element to a video element</a></li>
+
+            <li><a href="src/content/capture/video-contenthint/">Guiding video encoding with content hints</a></li>
+        </ul>
+
+        <h2 id="peerconnection"><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection">RTCPeerConnection:</a>
+        </h2>
+        <ul>
+            <li><a href="src/content/peerconnection/pc1/">Basic peer connection demo</a></li>
+
+            <li><a href="src/content/peerconnection/upgrade/">Upgrade a call and turn video on</a></li>
+
+            <li><a href="src/content/peerconnection/states/">Display peer connection states</a></li>
+
+            <li><a href="src/content/peerconnection/negotiate-timing/">Measure how long renegotiation takes</a></li>
+        </ul>
+        <h2 id="datachannel"><a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel">RTCDataChannel:</a></h2>
+        <p class="description">Send arbitrary data over peer connections</p>
+        <ul>
+            <li><a href="src/content/datachannel/basic/">Transmit text</a></li>
+        </ul>
+
+        <h2 id="videoChat">Video chat:</h2>
+        <ul>
+
+            <li><a href="https://apprtc.appspot.com/">AppRTC (EXTERNAL DEMO) video chat client</a> powered by Google App
+                Engine
+            </li>
+        </ul>
+
+    </section>
+
+</div>
+
+<script src="src/js/lib/ga.js"></script>
+
+</body>
+</html>

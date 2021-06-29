@@ -35,8 +35,6 @@ remoteVideo.addEventListener('loadedmetadata', function () {
 remoteVideo.onresize = () => {
     console.log(`Remote video size changed to ${remoteVideo.videoWidth}x${remoteVideo.videoHeight}`);
     console.warn('RESIZE', remoteVideo.videoWidth, remoteVideo.videoHeight);
-    // We'll use the first onsize callback as an indication that video has started
-    // playing out.
     if (startTime) {
         const elapsedTime = window.performance.now() - startTime;
         console.log(`Setup time: ${elapsedTime.toFixed(3)}ms`);

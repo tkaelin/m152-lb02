@@ -1,10 +1,5 @@
 'use strict';
 
-// Meter class that generates a number correlated to audio volume.
-// The meter class itself displays nothing, but it makes the
-// instantaneous and time-decaying volumes available for inspection.
-// It also reports on the fraction of samples that were at or near
-// the top of the measurement range.
 function SoundMeter(context) {
     this.context = context;
     this.instant = 0.0;
@@ -34,7 +29,6 @@ SoundMeter.prototype.connectToSource = function (stream, callback) {
     try {
         this.mic = this.context.createMediaStreamSource(stream);
         this.mic.connect(this.script);
-        // necessary to make sample run, but should not be.
         this.script.connect(this.context.destination);
         if (typeof callback !== 'undefined') {
             callback(null);

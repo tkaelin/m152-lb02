@@ -1,4 +1,3 @@
-/* global AudioContext, SoundMeter */
 
 'use strict';
 
@@ -15,7 +14,6 @@ const instantValueDisplay = document.querySelector('#instant .value');
 const slowValueDisplay = document.querySelector('#slow .value');
 const clipValueDisplay = document.querySelector('#clip .value');
 
-// Put variables in global scope to make them available to the browser console.
 const constraints = window.constraints = {
     audio: true,
     video: false
@@ -24,8 +22,6 @@ const constraints = window.constraints = {
 let meterRefresh = null;
 
 function handleSuccess(stream) {
-    // Put variables in global scope to make them available to the
-    // browser console.
     window.stream = stream;
     const soundMeter = window.soundMeter = new SoundMeter(window.audioContext);
     soundMeter.connectToSource(stream, function (e) {

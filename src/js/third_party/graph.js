@@ -1,17 +1,7 @@
-/*
- *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
- *
- *  Use of this source code is governed by a BSD-style license
- *  that can be found in the LICENSE file in the root of the source
- *  tree.
- */
-// taken from chrome://webrtc-internals with jshint adaptions
+
 
 'use strict';
-/* exported TimelineDataSeries, TimelineGraphView */
 
-// The maximum number of data points bufferred for each stats. Old data points
-// will be shifted out when the buffer is full.
 const MAX_STATS_DATA_POINT_BUFFER_SIZE = 1000;
 
 const TimelineDataSeries = (function () {
@@ -19,12 +9,9 @@ const TimelineDataSeries = (function () {
      * @constructor
      */
     function TimelineDataSeries() {
-        // List of DataPoints in chronological order.
         this.dataPoints_ = [];
 
-        // Default color.  Should always be overridden prior to display.
         this.color_ = 'red';
-        // Whether or not the data series should be drawn.
         this.isVisible_ = true;
 
         this.cacheStartTime_ = null;
@@ -51,11 +38,6 @@ const TimelineDataSeries = (function () {
                 values: JSON.stringify(values),
             };
         },
-
-        /**
-         * Adds a DataPoint to |this| with the specified time and value.
-         * DataPoints are assumed to be received in chronological order.
-         */
         addPoint: function (timeTicks, value) {
             let time = new Date(timeTicks);
             this.dataPoints_.push(new DataPoint(time, value));
@@ -84,11 +66,6 @@ const TimelineDataSeries = (function () {
         getCount: function () {
             return this.dataPoints_.length;
         },
-        /**
-         * Returns a list containing the values of the data series at |count|
-         * points, starting at |startTime|, and |stepSize| milliseconds apart.
-         * Caches values, so showing/hiding individual data series is fast.
-         */
         getValues: function (startTime, stepSize, count) {
             // Use cached values, if we can.
             if (this.cacheStartTime_ === startTime &&
@@ -104,10 +81,6 @@ const TimelineDataSeries = (function () {
 
             return this.cacheValues_;
         },
-
-        /**
-         * Returns the cached |values| in the specified time period.
-         */
         getValuesInternal_: function (startTime, stepSize, count) {
             let values = [];
             let nextPoint = 0;
@@ -125,12 +98,6 @@ const TimelineDataSeries = (function () {
             return values;
         }
     };
-
-    /**
-     * A single point in a data series.  Each point has a time, in the form of
-     * milliseconds since the Unix epoch, and a numeric value.
-     * @constructor
-     */
     function DataPoint(time, value) {
         this.time = time;
         this.value = value;
@@ -140,20 +107,11 @@ const TimelineDataSeries = (function () {
 })();
 
 const TimelineGraphView = (function () {
-    // Maximum number of labels placed vertically along the sides of the graph.
     let MAX_VERTICAL_LABELS = 6;
 
-    // Vertical spacing between labels and between the graph and labels.
     let LABEL_VERTICAL_SPACING = 4;
-    // Horizontal spacing between vertically placed labels and the edges of the
-    // graph.
     let LABEL_HORIZONTAL_SPACING = 3;
-    // Horizintal spacing between two horitonally placed labels along the bottom
-    // of the graph.
-    // var LABEL_LABEL_HORIZONTAL_SPACING = 25;
 
-    // Length of ticks, in pixels, next to y-axis labels.  The x-axis only has
-    // one set of labels, so it can use lines instead.
     let Y_AXIS_TICK_LENGTH = 10;
 
     let GRID_COLOR = '#CCC';
@@ -171,12 +129,7 @@ const TimelineGraphView = (function () {
         this.graphDiv_ = document.getElementById(divId);
         this.canvas_ = document.getElementById(canvasId);
 
-        // Set the range and scale of the graph.  Times are in milliseconds since
-        // the Unix epoch.
-
-        // All measurements we have must be after this time.
         this.startTime_ = 0;
-        // The current rightmost position of the graph is always at most this.
         this.endTime_ = 1;
 
         this.graph_ = null;

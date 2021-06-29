@@ -1,17 +1,4 @@
-//
-// A "videopipe" abstraction on top of WebRTC.
-//
-// The usage of this abstraction:
-// var pipe = new VideoPipe(mediastream, handlerFunction);
-// handlerFunction = function(mediastream) {
-//   do_something
-// }
-// pipe.close();
-//
-// The VideoPipe will set up 2 PeerConnections, connect them to each
-// other, and call HandlerFunction when the stream is available in the
-// second PeerConnection.
-//
+
 
 function errorHandler(context) {
     return function (error) {

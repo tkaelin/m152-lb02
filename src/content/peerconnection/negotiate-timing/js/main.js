@@ -34,7 +34,7 @@ remoteVideo.addEventListener('loadedmetadata', function () {
 
 remoteVideo.onresize = () => {
     console.log(`Remote video size changed to ${remoteVideo.videoWidth}x${remoteVideo.videoHeight}`);
-    console.warn('RESIZE', remoteVideo.videoWidth, remoteVideo.videoHeight);
+    console.info('RESIZE', remoteVideo.videoWidth, remoteVideo.videoHeight);
     if (startTime) {
         const elapsedTime = window.performance.now() - startTime;
         console.log(`Setup time: ${elapsedTime.toFixed(3)}ms`);
@@ -52,7 +52,7 @@ function logToScreen(text) {
 }
 
 function getName(pc) {
-    return (pc === pc1) ? 'pc1' : 'pc2';
+    return (pc === pc1) ? 'Peer Connection 1' : 'Peer Connection 2';
 }
 
 function getOtherPc(pc) {
@@ -110,17 +110,17 @@ async function call() {
     }
     const servers = null;
     pc1 = new RTCPeerConnection(servers);
-    console.log('Created local peer connection object pc1');
+    console.log('Created local peer connection object PeerConnection 1');
     pc1.onicecandidate = e => onIceCandidate(pc1, e);
     pc2 = new RTCPeerConnection(servers);
-    console.log('Created remote peer connection object pc2');
+    console.log('Created remote peer connection object PeerConnection 2');
     pc2.onicecandidate = e => onIceCandidate(pc2, e);
     pc1.oniceconnectionstatechange = e => onIceStateChange(pc1, e);
     pc2.oniceconnectionstatechange = e => onIceStateChange(pc2, e);
     pc2.addEventListener('track', gotRemoteStream, {once: true});
 
     localStream.getTracks().forEach(track => pc1.addTrack(track, localStream));
-    console.log('Added local stream to pc1');
+    console.log('Added local stream to PeerConnection 1');
 
     await runOfferAnswer();
     console.log('Initial negotiation complete');

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <base target="_blank">
-
     <title>Transmit text</title>
 
     <link href="../../../images/tbz.jpeg" rel="icon" sizes="192x192">
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
     <link href="../../../css/main.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
@@ -17,13 +16,12 @@
 
 <div id="container">
 
-    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
-        <span>Transmit text</span></h1>
+    <h1><span>Transmit text</span></h1>
 
     <div id="buttons">
-        <button id="startButton">Start</button>
-        <button disabled id="sendButton">Send</button>
-        <button disabled id="closeButton">Stop</button>
+        <button class="btn btn-primary"id="startButton">Start</button>
+        <button class="btn btn-primary"disabled id="sendButton">Send</button>
+        <button class="btn btn-primary"disabled id="closeButton">Stop</button>
     </div>
 
     <div id="sendReceive">
@@ -39,13 +37,6 @@
     </div>
 
     <p>View the console to see logging.</p>
-
-    <p>The <code>RTCPeerConnection</code> objects <code>localConnection</code> and <code>remoteConnection</code> are in
-        global scope, so you can inspect them in the console as well.</p>
-
-    <p>For more information about RTCDataChannel, see <a
-            href="http://www.html5rocks.com/en/tutorials/webrtc/basics/#toc-rtcdatachannel"
-            title="RTCDataChannel section of HTML5 Rocks article about WebRTC">Getting Started With WebRTC</a>.</p>
 </div>
 
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>

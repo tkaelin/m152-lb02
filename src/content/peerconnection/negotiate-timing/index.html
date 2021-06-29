@@ -2,16 +2,6 @@
 <html>
 <head>
 
-    <meta charset="utf-8">
-    <meta content="WebRTC code samples" name="description">
-    <meta content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1" name="viewport">
-    <meta content="Client-side WebRTC code samples" itemprop="description">
-    <meta content="../../../images/webrtc-icon-192x192.png" itemprop="image">
-    <meta content="WebRTC code samples" itemprop="name">
-    <meta content="yes" name="mobile-web-app-capable">
-    <meta content="#ffffff" id="theme-color" name="theme-color">
-
-    <base target="_blank">
 
     <title>Peer connection - Renegotiate</title>
 
@@ -19,6 +9,9 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
     <link href="../../../css/main.css" rel="stylesheet"/>
     <link href="css/main.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 
 </head>
 
@@ -32,10 +25,10 @@
     <video autoplay id="remoteVideo" playsinline></video>
 
     <div>
-        <button id="startButton">Start</button>
-        <button id="callButton">Call</button>
-        <button id="renegotiateButton">Renegotiate</button>
-        <button id="hangupButton">Hang Up</button>
+        <button class="btn btn-primary" id="startButton">Start</button>
+        <button class="btn btn-primary" id="callButton">Call</button>
+        <button class="btn btn-primary" id="renegotiateButton">Renegotiate</button>
+        <button class="btn btn-primary" id="hangupButton">Hang Up</button>
     </div>
     <div>
         <p>

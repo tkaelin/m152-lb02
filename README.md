@@ -1,6 +1,6 @@
 # Streaming mit WebRTC
 
-Diese Arbeit von Noel Monnerat zeigt verschiedene Anwendungsfälle für WebRTC.  
+Diese Arbeit von Noel Monnerat, AP18a zeigt verschiedene Anwendungsfälle für WebRTC.  
 
 # Installation 
 Repository klonen über
